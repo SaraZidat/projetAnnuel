@@ -14,6 +14,5 @@ module.exports = (drinkToCreate) => {
       return connect()
             .then(db => db.collection(collections.DRINKS))
             .then(collection => collection.insertOne(drink))
-            .then(dbResponse => dbResponse.ops[0]);
         });
 }
