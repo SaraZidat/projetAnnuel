@@ -15,5 +15,6 @@ module.exports = (productToCreate) => {
           return connect()
             .then(db => db.collection(collections.PRODUCTS))
             .then(collection => collection.insertOne(product))
+            .then(dbResponse => dbResponse.ops[0])
         });
 }
