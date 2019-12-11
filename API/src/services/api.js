@@ -16,7 +16,7 @@ router.use('/api', barsRouter);
 router.use('/api', ordersRouter);
 router.use('/api', drinksRouter);
 router.use('/api', productsRouter);
-router.use('/api', authRouter);
+//router.use('/api', authRouter);
 // End of service API
 
 module.exports = router;
