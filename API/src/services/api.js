@@ -5,7 +5,6 @@ const barsRouter = require('../modules/bars/router');
 const ordersRouter = require('../modules/orders/router');
 const drinksRouter = require('../modules/drinks/router');
 const productsRouter = require('../modules/products/router');
-//const authRouter = require('../modules/auth/router');
 
 const router = new Router();
 
@@ -16,7 +15,6 @@ router.use('/api', barsRouter);
 router.use('/api', ordersRouter);
 router.use('/api', drinksRouter);
 router.use('/api', productsRouter);
-//.use('/api', authRouter);
 // End of service API
 
 module.exports = router;
