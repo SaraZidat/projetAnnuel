@@ -14,6 +14,7 @@ module.exports = (orderToCreate) => {
           return connect()
             .then(db => db.collection(collections.ORDERS))
             .then(collection => collection.insertOne(order))
+            .then(dbResponse => dbResponse.ops[0])
         });
 
 }
