@@ -7,16 +7,6 @@ const findOneById = require('./findOneById');
 
 module.exports = (id, drinkToUpdate) => {
   return updateModel.validate(drinkToUpdate)
-    .then(() => {
-      if (drinkToUpdate.password) {
-        const drink = {
-          ...drinkToUpdate,
-          password: bcrypt.hashSync(drinkToUpdate.password, 10),
-        };
-        return drink;
-      }
-      return drinkToUpdate;
-    })
     .then((drink) => {
       return connect()
         .then(db => db.collection(collections.DRINKS))
