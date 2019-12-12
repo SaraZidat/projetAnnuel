@@ -8,8 +8,8 @@ const createModel = joi.object().keys({
 });
 
 const updateModel = joi.object().keys({
-  password: joi.string().required(),
-  email: joi.string().email().required(),
+  password: joi.string(),
+  email: joi.string().email(),
   deleteDate: joi.date(),
 });
 
