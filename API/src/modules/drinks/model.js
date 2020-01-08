@@ -10,6 +10,7 @@ const createModel = joi.object().keys({
 
 const updateModel = joi.object().keys({
   libelle: joi.string(),
+  bar: joi.string(),
   price: joi.number(),
   description: joi.string(),
   recipe: joi.array(),
