@@ -8,6 +8,7 @@ const apiRouter = require('./services/api');
 const frontRouter = require('./services/front');
 const notFound = require('./middleware/notFound');
 const errors = require('./middleware/errors');
+// const verify = require('./middleware/verify');
 
 const server = express();
 // Middlware Généraux
@@ -15,7 +16,7 @@ server.use(helmet());
 server.use(cors());
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
-
+// server.use(verify);
 server.set('views', './src/views');
 server.set('view engine', 'ejs');
 

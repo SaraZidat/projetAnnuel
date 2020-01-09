@@ -6,12 +6,14 @@ const deleteUserPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 const findOneByEmail = require('./findOneByEmail');
 
 module.exports = (userToCreate) => {
+  console.log(userToCreate);
   return createModel.validate(userToCreate)
     .then(() => {
       const user = {
         ...userToCreate,
         password: bcrypt.hashSync(userToCreate.password, 10),
       };
+      console.log(user);
       return user;
     })
     .then((user) => {

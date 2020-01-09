@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const authRouter = require('../modules/auth/router');
 const usersRouter = require('../modules/users/router');
 const adminsRouter = require('../modules/admins/router');
 const barsRouter = require('../modules/bars/router');
@@ -9,6 +10,7 @@ const productsRouter = require('../modules/products/router');
 const router = new Router();
 
 // Service  API
+router.use('/api', authRouter);
 router.use('/api', usersRouter);
 router.use('/api', adminsRouter);
 router.use('/api', barsRouter);

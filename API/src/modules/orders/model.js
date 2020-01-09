@@ -13,7 +13,7 @@ const createModel = joi.object().keys({
 const updateModel = joi.object().keys({
   validate: joi.boolean(),
   drinks: joi.array(),
-}); 
+});
 
 module.exports = {
   createModel,

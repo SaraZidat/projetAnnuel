@@ -1,0 +1,15 @@
+<div class="container" [class.favorite]="isFavorite" (click)="openBarDetails()" *ngIf="bar">
+
+  <div class="content">
+    <h3>{{bar.name}}</h3>
+  <span>{{bar.webSite}}</span>
+  <button class="snipcart-add-item btn btn-lg btn-success"
+  type="button"
+  data-item-name="moi"
+  data-item-price="15"
+  data-item-id="12365"
+  data-item-description="moi moi moi">
+    Acheter <span class="glyphicon glyphicon-ok"></span>
+  </button>
+  </div>
+</div>

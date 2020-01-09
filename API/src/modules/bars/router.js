@@ -4,7 +4,7 @@ const updateOneById = require('./middleware/updateOneById');
 const find = require('./middleware/find');
 const createOne = require('./middleware/createOne');
 const deleteOneById = require('./middleware/deleteOneById');
-const barCtrl = require('./barsCtrl')
+const barCtrl = require('./barsCtrl');
 
 const router = new Router();
 

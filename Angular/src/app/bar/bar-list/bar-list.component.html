@@ -1,0 +1,12 @@
+<div class="spaced" data-testid="filtering">
+  <input type="text" [(ngModel)]="filterInput" name="filter-input" (keyup)="onFilter()" [placeholder]="
+    filterPlaceholder" autocomplete="off" class="form-control"/>
+  <button type="button" class="btn btn-success"(click)="reset()">clear</button>
+</div>
+<section *ngIf="bars$ | async as bars; else loading" data-testid="display-bars">
+  <fbapp-bar-thumbnail *ngFor="let bar of bars" [bar]="bar" (chose)="onSelectBar($event)">
+  </fbapp-bar-thumbnail>
+</section>
+<ng-template #loading>
+  <fbapp-loader center></fbapp-loader>
+</ng-template>
