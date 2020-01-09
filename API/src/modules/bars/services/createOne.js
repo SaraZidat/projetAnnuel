@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const { createModel } = require('../model');
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteBarPrivateKeys = require('../../../helpers/deleteBarPrivateKeys');
+const deleteBarPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 const findOneByEmail = require('./findOneByEmail');
 
 module.exports = (barToCreate) => {

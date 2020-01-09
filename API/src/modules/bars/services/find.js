@@ -1,6 +1,6 @@
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteBarPrivateKeys = require('../../../helpers/deleteBarPrivateKeys');
+const deleteBarPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 
 module.exports = (first = 20, offset = 0, term) => {
   return connect()

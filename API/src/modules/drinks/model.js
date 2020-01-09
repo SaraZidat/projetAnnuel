@@ -13,6 +13,8 @@ const updateModel = joi.object().keys({
   price: joi.number(),
   description: joi.string(),
   recipe: joi.array(),
+  bar: joi.string(),
+
 });
 
 module.exports = {

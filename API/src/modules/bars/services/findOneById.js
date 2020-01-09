@@ -1,7 +1,7 @@
 const { ObjectId } = require('mongodb');
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteBarPrivateKeys = require('../../../helpers/deleteBarPrivateKeys');
+const deleteBarPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 
 module.exports = (id) => {
   return connect()
