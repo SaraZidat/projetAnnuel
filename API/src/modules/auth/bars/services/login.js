@@ -1,28 +1,28 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { userModel } = require('../../model');
+const { barModel } = require('../../model');
 const findOneByEmail = require('../../../bars/services/findOneByEmail');
 
 const jwtSecret = 'bars_key';
-module.exports = (userToCreate) => {
-  return userModel.validate(userToCreate)
+module.exports = (barToCreate) => {
+  return barModel.validate(barToCreate)
     .then(() => {
-      const user = {
-        ...userToCreate,
+      const bar = {
+        ...barToCreate,
       };
-      return user;
+      return bar;
     })
 
-    .then((user) => {
-      return findOneByEmail(user.email).then((userDB) => {
-        const match = bcrypt.compareSync(user.password, userDB.password);
+    .then((bar) => {
+      return findOneByEmail(bar.email).then((barDB) => {
+        const match = bcrypt.compareSync(bar.password, barDB.password);
         if (match) {
-          const token = jwt.sign({ id: userDB._id }, jwtSecret, { expiresIn: '60m' });
-          const userAuth = {
-            ...userDB,
+          const token = jwt.sign({ id: barDB.id }, jwtSecret, { expiresIn: '60m' });
+          const barAuth = {
+            ...barDB,
             token,
           };
-          return userAuth;
+          return barAuth;
         }
         const err = { error: 'authentication failed', status: 403 };
         return err;

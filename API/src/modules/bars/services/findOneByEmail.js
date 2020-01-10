@@ -1,6 +1,5 @@
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteBarPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 
 module.exports = (email) => {
   return connect()
@@ -8,7 +7,7 @@ module.exports = (email) => {
     .then(collection => collection.findOne({ email }))
     .then((dbResponse) => {
       if (dbResponse) {
-        return deleteBarPrivateKeys(dbResponse);
+        return dbResponse;
       }
 
       const err = new Error(`Bar not found for email: ${email}`);

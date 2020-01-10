@@ -1,13 +1,13 @@
 const login = require('../services/login');
 
 module.exports = (req, res, next) => {
-  const userToCreate = req.body;
+  const barToCreate = req.body;
 
   // console.log(userToCreate);
 
-  login(userToCreate)
-    .then((user) => {
-      res.json(user);
+  login(barToCreate)
+    .then((bar) => {
+      res.json(bar);
     })
     .catch((err) => {
       next(err);

@@ -17,7 +17,7 @@ module.exports = (userToCreate) => {
       return findOneByEmail(user.email).then((userDB) => {
         const match = bcrypt.compareSync(user.password, userDB.password);
         if (match) {
-          const token = jwt.sign({ id: userDB._id }, jwtSecret, { expiresIn: '60m' });
+          const token = jwt.sign({ id: userDB.id }, jwtSecret, { expiresIn: '60m' });
           const userAuth = {
             ...userDB,
             token,
