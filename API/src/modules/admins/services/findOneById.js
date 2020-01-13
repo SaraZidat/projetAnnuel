@@ -1,7 +1,7 @@
 const { ObjectId } = require('mongodb');
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteAdminPrivateKeys = require('../../../helpers/deleteAdminPrivateKeys');
+const deleteUserPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 
 module.exports = (id) => {
   return connect()
@@ -9,7 +9,7 @@ module.exports = (id) => {
     .then(collection => collection.findOne({ _id: ObjectId(id) }))
     .then((admin) => {
       if (admin) {
-        return deleteAdminPrivateKeys(admin);
+        return deleteUserPrivateKeys(admin);
       }
 
       const err = new Error(`List not found for id: ${id}`);

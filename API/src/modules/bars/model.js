@@ -19,6 +19,8 @@ const updateModel = joi.object().keys({
   menu: joi.array(),
   deleteDate: joi.date(),
   stock: joi.array(),
+  isValidate: joi.boolean(),
+
 });
 
 module.exports = {

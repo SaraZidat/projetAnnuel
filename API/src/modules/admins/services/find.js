@@ -1,6 +1,6 @@
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteAdminPrivateKeys = require('../../../helpers/deleteAdminPrivateKeys');
+const deleteUserPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 
 module.exports = (first = 20, offset = 0, term) => {
   return connect()
@@ -11,7 +11,7 @@ module.exports = (first = 20, offset = 0, term) => {
     .then(cursor => cursor.toArray())
     .then((admins) => {
       return admins.map((admin) => {
-        return deleteAdminPrivateKeys(admin);
+        return deleteUserPrivateKeys(admin);
       });
     });
 };

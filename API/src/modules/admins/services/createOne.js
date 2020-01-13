@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const { createModel } = require('../model');
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
-const deleteAdminPrivateKeys = require('../../../helpers/deleteAdminPrivateKeys');
+const deleteUserPrivateKeys = require('../../../helpers/deleteUserPrivateKeys');
 const findOneByEmail = require('./findOneByEmail');
 
 module.exports = (adminToCreate) => {
@@ -24,7 +24,7 @@ module.exports = (adminToCreate) => {
           return connect()
             .then(db => db.collection(collections.ADMINS))
             .then(collection => collection.insertOne(admin))
-            .then(dbResponse => deleteAdminPrivateKeys(dbResponse.ops[0]));
+            .then(dbResponse => deleteUserPrivateKeys(dbResponse.ops[0]));
         });
     });
 };

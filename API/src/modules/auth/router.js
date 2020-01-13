@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const loginBar = require('./bars/middleware/login');
+const loginAdmin = require('./admins/middleware/login');
 const loginUser = require('./users/middleware/login');
 
 
@@ -10,5 +11,8 @@ router.route('/auth/bars')
 
 router.route('/auth/users')
   .post(loginUser);
+
+router.route('/auth/admins')
+  .post(loginAdmin);
 
 module.exports = router;

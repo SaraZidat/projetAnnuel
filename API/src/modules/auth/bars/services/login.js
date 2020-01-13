@@ -1,11 +1,11 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { barModel } = require('../../model');
+const { userModel } = require('../../model');
 const findOneByEmail = require('../../../bars/services/findOneByEmail');
 
 const jwtSecret = 'bars_key';
 module.exports = (barToCreate) => {
-  return barModel.validate(barToCreate)
+  return userModel.validate(barToCreate)
     .then(() => {
       const bar = {
         ...barToCreate,
