@@ -1,5 +1,7 @@
 const { Router } = require('express');
 const findOneById = require('./middleware/findOneById');
+const findOneByEmail = require('./middleware/findOneByEmail');
+
 const updateOneById = require('./middleware/updateOneById');
 const find = require('./middleware/find');
 const createOne = require('./middleware/createOne');
@@ -14,7 +16,7 @@ router.route('/bars')
 
 router.route('/bars/register').post(barCtrl.register);
 router.route('/bars/login').post(barCtrl.login);
-
+router.route('/bars/mail/:barEmail').get(findOneByEmail);
 router.route('/bars/:barId')
   .get(findOneById)
   .patch(updateOneById)
