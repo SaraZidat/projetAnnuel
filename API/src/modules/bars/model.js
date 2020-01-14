@@ -10,6 +10,7 @@ const createModel = joi.object().keys({
   createDate: joi.date().empty(''),
   deleteDate: joi.date().empty(''),
   stock: joi.array().empty(''),
+  online: joi.boolean(),
 });
 
 const updateModel = joi.object().keys({
@@ -22,6 +23,8 @@ const updateModel = joi.object().keys({
   deleteDate: joi.date(),
   stock: joi.array(),
   isValidate: joi.boolean(),
+  online: joi.boolean(),
+
 
 });
 
