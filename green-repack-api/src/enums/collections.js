@@ -3,6 +3,5 @@ module.exports = {
   MARCHANDS: 'marchands',
   USERS: 'users',
   ORDERS: 'orders',
-  DRINKS: 'drinks',
   PRODUCTS: 'products',
 };
