@@ -1,0 +1,20 @@
+
+    <div class="container">
+            <h1 class="padded text-center">Bienvenue sur GreenRepack!</h1>
+
+
+            <div class="text-center padded">
+              <ng-container *ngIf="user; else login">
+                    <h2>Bienvenue {{ user.pseudo }}!</h2>
+              </ng-container>
+
+              <ng-template #login>
+                      <button type="button" class="btn btn-primary" primary routerLink="/user/login">Se connecter</button>
+                      <button type="button" class="btn btn-default" primary routerLink="/user/register">S'inscrire</button>
+
+              </ng-template>
+
+            </div>
+
+    </div>
+
