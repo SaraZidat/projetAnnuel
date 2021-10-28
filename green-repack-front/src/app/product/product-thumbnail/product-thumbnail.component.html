@@ -1,0 +1,18 @@
+<div class="container"   *ngIf="product">
+    <div *ngIf="product.img!=null"><img [src]="product.img" [alt]="product.libelle"></div>
+  <div class="content">
+    <h3>{{product.libelle}}</h3>
+  <span>{{product.description}}</span>
+  <div>{{product.price}} €</div>
+  <button class="snipcart-add-item btn btn-success"
+  type="button"
+      [attr.data-item-id]="product._id"
+      [attr.data-item-price]="product.price"
+      [attr.data-item-description]="product.description"
+      [attr.data-item-image]="product.img"
+      [attr.data-item-name]="product.libelle">
+    Acheter
+  </button>
+
+  </div>
+</div>

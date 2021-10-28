@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+.main {
+  padding: 4rem 2rem;
+  font-family: 'Roboto', sans-serif;
+  background-color: #b5cb8457;
+  min-height: 87vh;
+}
+.peach-gradient {
+  background: linear-gradient(40deg, #ffd86f, #fc6262) !important;
+}
+
+

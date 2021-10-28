@@ -1,0 +1,8 @@
+
+<section  *ngIf="products$ | async as products; else loading" data-testid="display-products">
+  <fbapp-product-thumbnail *ngFor="let product of products" [product]="product ">
+  </fbapp-product-thumbnail>
+</section>
+<ng-template #loading>
+  <fbapp-loader center></fbapp-loader>
+</ng-template>
