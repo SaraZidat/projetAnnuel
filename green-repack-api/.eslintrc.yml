@@ -2,8 +2,6 @@ env:
   node: true
   es6: true
   mocha: true
-  no-console: off
-
 
 extends:
   - airbnb-base
