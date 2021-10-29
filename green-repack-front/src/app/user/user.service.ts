@@ -12,7 +12,7 @@ import { UserShape } from './UserShape';
 })
 export class UserService {
   private authenticatedUser!: User;
-  //uri = 'http://localhost:3000';
+  //uri = 'http://localhost:4200';
   uri = 'https://projet-annuel-node.herokuapp.com';
 
   public constructor(private readonly httpClient: HttpClient) {}
