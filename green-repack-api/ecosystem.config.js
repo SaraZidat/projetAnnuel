@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       script: './src/index.js',
-      name: 'todo',
+      name: 'PA',
       watch: [
         'src',
       ],
