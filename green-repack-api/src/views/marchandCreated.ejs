@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Marchand created</h1>
+    <a href="/marchands">Back to marchands</a>
+    <p>L'email est <%= marchand.email %></p>
+    <% if (marchand.firstname) { %>
+      <p>Le nom est <%= marchand.firstname %> <%= marchand.lastname %></p>
+    <% } %>
+  </body>
+</html>
